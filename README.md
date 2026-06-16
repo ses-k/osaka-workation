@@ -35,10 +35,16 @@ npm start
 
 (Or run `npx vercel` from this folder for a direct CLI deploy.)
 
+## Look & feel
+
+Light, warm theme — cream `#f7ede0` / white `#ffffff` backgrounds, near-black `#0f0f0f` text, orange `#ea5504` accent. No emoji: all feature icons are `lucide-react` rendered in brand orange (`components/feature-icon.tsx`). Every photo on the site is used exactly once (no duplicates).
+
 ## Assets
 
-- `public/logo/` — brand logos (orange wordmark + white A-tower mark).
-- `public/events/` — 6 real community event photos (`event-1.jpg` … `event-6.jpg`), resized for web.
+- `public/logo/` — brand logos (orange wordmark + A-tower mark).
+- `public/img/` — Osaka city, food, coworking & day-trip photos (hero, districts, about, contact, events).
+- `public/stays/` — real guesthouse (民宿) interiors for the Stays page.
+- `public/events/` — 6 real community event photos used on the Community page.
 
 ## Things to wire up later
 
@@ -47,6 +53,5 @@ These are stubbed and clearly marked in the code:
 - **Contact form** (`components/contact-form.tsx`) — connect to your email / form provider.
 - **Stays "View" buttons** — link to real listings when ready.
 - **Discord link** (`lib/site.ts` → `SITE.discord`) — replace with your real invite URL.
-- **Email** (`lib/site.ts` → `SITE.email`) — replace placeholder with your address.
 
-All shared copy and data live in `lib/site.ts` for easy editing.
+Instagram (`@osaka_workation`) and email (`kokorolxy7@gmail.com`) are already wired in `lib/site.ts`, where all shared copy lives for easy editing.
