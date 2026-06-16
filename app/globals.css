@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  background-color: #0b0b0d;
-  color: #ece6dc;
+  background-color: #f7ede0;
+  color: #0f0f0f;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -22,33 +22,49 @@ body {
     @apply mx-auto w-full max-w-content px-5 sm:px-8;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-orangeHover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-orangeHover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-paper-cream;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/10;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-ink/15 bg-transparent px-6 py-3 text-sm font-semibold text-brand-ink transition-colors hover:border-brand-ink/30 hover:bg-brand-ink/5;
+  }
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/70 bg-white/80 px-6 py-3 text-sm font-semibold text-brand-ink backdrop-blur transition-colors hover:bg-white;
   }
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange;
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-orange;
   }
   .card {
-    @apply rounded-2xl border border-ink-border bg-ink-700 transition-colors;
+    @apply rounded-2xl border border-paper-line bg-white transition-all;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-[0_18px_40px_-24px_rgba(15,15,15,0.35)];
   }
   .link-muted {
-    @apply text-white/60 transition-colors hover:text-white;
+    @apply text-muted transition-colors hover:text-brand-orange;
   }
 }
 
-/* subtle grain-free section divider */
-.hero-overlay {
+/* light, warm scrim so dark text stays legible over bright photos */
+.hero-scrim {
   background: linear-gradient(
-      180deg,
-      rgba(11, 11, 13, 0.55) 0%,
-      rgba(11, 11, 13, 0.4) 35%,
-      rgba(11, 11, 13, 0.85) 100%
+      90deg,
+      rgba(247, 237, 224, 0.94) 0%,
+      rgba(247, 237, 224, 0.78) 34%,
+      rgba(247, 237, 224, 0.18) 64%,
+      rgba(247, 237, 224, 0) 100%
     ),
-    radial-gradient(
-      120% 80% at 80% 0%,
-      rgba(234, 85, 4, 0.28) 0%,
-      rgba(234, 85, 4, 0) 55%
+    linear-gradient(
+      180deg,
+      rgba(247, 237, 224, 0) 55%,
+      rgba(247, 237, 224, 0.85) 100%
     );
+}
+
+.page-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(247, 237, 224, 0.2) 0%,
+    rgba(247, 237, 224, 0.55) 55%,
+    rgba(247, 237, 224, 0.95) 100%
+  );
 }

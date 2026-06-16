@@ -3,10 +3,10 @@ export const SITE = {
   shortName: "OSAKA Workation",
   tagline: "Work from Osaka. Connect with the world.",
   taglineJa: "大阪から世界へ。ローカルとつながる国際ノマドコミュニティ",
-  instagram: "https://www.instagram.com/osaka_digitalnomads_workation",
-  instagramHandle: "@osaka_digitalnomads_workation",
+  instagram: "https://www.instagram.com/osaka_workation",
+  instagramHandle: "@osaka_workation",
   discord: "https://discord.gg",
-  email: "hello@osaka-workation.com",
+  email: "kokorolxy7@gmail.com",
 };
 
 export const NAV = [
@@ -27,22 +27,22 @@ export const STATS = [
 
 export const WHY_OSAKA = [
   {
-    icon: "🍜",
+    icon: "food",
     title: "Amazing food",
     body: "From takoyaki to ramen, Osaka is Japan's kitchen — and the world's best lunch break.",
   },
   {
-    icon: "💰",
+    icon: "cost",
     title: "Lower costs",
     body: "Around 30% cheaper than Tokyo, with the same fast internet and quality of life.",
   },
   {
-    icon: "📶",
+    icon: "wifi",
     title: "Fast Wi-Fi",
     body: "100+ Mbps average in cafes and coworking spaces. Ship from anywhere in the city.",
   },
   {
-    icon: "👋",
+    icon: "locals",
     title: "Friendly locals",
     body: "Known as Japan's warmest, most welcoming city. You'll feel at home by day two.",
   },
@@ -53,19 +53,19 @@ export const DISTRICTS = [
     name: "Namba",
     kanji: "難波",
     body: "Entertainment hub with endless nightlife, street food, and shopping.",
-    image: "/events/event-2.jpg",
+    image: "/img/district-namba.jpg",
   },
   {
     name: "Umeda",
     kanji: "梅田",
     body: "Business district with modern cafes, sky gardens, and coworking towers.",
-    image: "/events/event-5.jpg",
+    image: "/img/district-umeda.jpg",
   },
   {
     name: "Tennoji",
     kanji: "天王寺",
     body: "Traditional vibes mixed with a local street-food scene and quiet stays.",
-    image: "/events/event-1.jpg",
+    image: "/img/district-tennoji.jpg",
   },
 ];
 
@@ -76,7 +76,7 @@ export const STAYS = [
     rating: "4.9",
     price: "¥8,500",
     badge: "Most popular",
-    image: "/events/event-2.jpg",
+    image: "/stays/stay-1.jpg",
     perks: ["Wi-Fi 200Mbps", "Standing desk", "Weekly clean", "Coffee bar"],
   },
   {
@@ -85,16 +85,16 @@ export const STAYS = [
     rating: "4.8",
     price: "¥12,000",
     badge: "Skyline view",
-    image: "/events/event-5.jpg",
+    image: "/stays/stay-2.jpg",
     perks: ["Wi-Fi 300Mbps", "Dual monitor", "Gym access", "City view"],
   },
   {
-    name: "Tennoji Cozy Studio",
+    name: "Tennoji Tatami Studio",
     area: "Tennoji, Osaka",
     rating: "4.7",
     price: "¥6,800",
     badge: "Best value",
-    image: "/events/event-1.jpg",
+    image: "/stays/stay-3.jpg",
     perks: ["Wi-Fi 150Mbps", "Desk + chair", "Quiet street", "Kitchenette"],
   },
   {
@@ -103,44 +103,44 @@ export const STAYS = [
     rating: "4.9",
     price: "¥10,500",
     badge: "Central",
-    image: "/events/event-6.jpg",
+    image: "/stays/stay-4.jpg",
     perks: ["Wi-Fi 250Mbps", "Ergo chair", "Balcony", "Steps to metro"],
   },
   {
-    name: "Nakazakicho Artist Loft",
+    name: "Nakazakicho Triple Room",
     area: "Nakazakicho, Osaka",
     rating: "4.8",
     price: "¥9,200",
-    badge: "Creative quarter",
-    image: "/events/event-3.jpg",
-    perks: ["Wi-Fi 200Mbps", "Big desk", "Cafe district", "Natural light"],
+    badge: "Group friendly",
+    image: "/stays/stay-5.jpg",
+    perks: ["Wi-Fi 200Mbps", "Big desk", "Cafe district", "Sleeps 3"],
   },
   {
-    name: "Tennoji Garden Apartment",
+    name: "Tennoji Tea-Room House",
     area: "Tennoji, Osaka",
     rating: "4.7",
     price: "¥7,400",
     badge: "Long-stay friendly",
-    image: "/events/event-4.jpg",
-    perks: ["Wi-Fi 180Mbps", "Workspace", "Washer", "Park nearby"],
+    image: "/stays/stay-6.jpg",
+    perks: ["Wi-Fi 180Mbps", "Workspace", "Washer", "Garden"],
   },
 ];
 
 export const MEETUPS = [
   {
-    icon: "☕",
+    icon: "coffee",
     title: "Weekly Nomad Coffee Meetup",
     cadence: "Every Thursday · rotating cafes",
     body: "Casual morning meetup to swap projects, tips, and find your Osaka crew.",
   },
   {
-    icon: "🍱",
+    icon: "cooking",
     title: "Japanese Cooking Class",
     cadence: "Bi-weekly Saturday · Tennoji Kitchen",
     body: "Learn to make Osaka home cooking with a local chef — then eat together.",
   },
   {
-    icon: "📸",
+    icon: "camera",
     title: "Osaka Photo Walk",
     cadence: "Monthly · starts at Dotonbori",
     body: "Golden-hour walk through the city's most photogenic streets and canals.",
@@ -156,32 +156,32 @@ export const WORKATION = {
     "One ticket, the full Osaka life. Work your mornings, live the city your evenings — for two weeks, with a ready-made international community.",
   includes: [
     {
-      icon: "🏠",
+      icon: "stay",
       title: "Accommodation",
       body: "Curated stay in a central Osaka neighborhood, work-ready from day one.",
     },
     {
-      icon: "💻",
+      icon: "cowork",
       title: "Coworking access",
       body: "Daytime desk at a partner coworking space with fast, reliable Wi-Fi.",
     },
     {
-      icon: "🍶",
+      icon: "culture",
       title: "Cultural experiences",
       body: "Miso-making, calligraphy, nabe hot-pot nights, and local craft sessions.",
     },
     {
-      icon: "⛩️",
+      icon: "daytrip",
       title: "Kansai day trips",
       body: "Guided weekend trips to Kyoto and Nara with the group.",
     },
     {
-      icon: "🥂",
+      icon: "dinner",
       title: "Opening & closing dinners",
       body: "Welcome and farewell dinners to kick off and celebrate the two weeks.",
     },
     {
-      icon: "🤝",
+      icon: "community",
       title: "Built-in community",
       body: "A vetted crew of 50–100 nomads — engineers, designers, founders, creators.",
     },
@@ -266,6 +266,12 @@ export const FAQS = [
   },
   {
     q: "How do I join?",
-    a: "Follow @osaka_digitalnomads_workation and join the waitlist below. Waitlist members get first access to dates, pricing, and spots.",
+    a: "Follow @osaka_workation and join the waitlist below. Waitlist members get first access to dates, pricing, and spots.",
   },
+];
+
+export const FOOD = [
+  { image: "/img/food-ramen.jpg", label: "Ramen counters" },
+  { image: "/img/food-takoyaki.jpg", label: "Street takoyaki" },
+  { image: "/img/food-octopus.jpg", label: "Dotonbori icons" },
 ];

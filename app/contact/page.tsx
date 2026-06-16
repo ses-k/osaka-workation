@@ -18,17 +18,14 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's talk"
         body="Questions about the Workation, a stay, or a partnership? Drop us a line — we read everything and reply within a couple of days."
-        image="/events/event-6.jpg"
+        image="/img/contact-hero.jpg"
       />
 
       <section className="container-page py-16 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
           {/* contact methods */}
           <div>
-            <SectionHeading
-              eyebrow="Reach us"
-              title="The fastest ways in"
-            />
+            <SectionHeading eyebrow="Reach us" title="The fastest ways in" />
             <div className="mt-8 space-y-4">
               <ContactRow
                 icon={<MessageCircle className="h-5 w-5 text-brand-orange" />}
@@ -54,10 +51,10 @@ export default function ContactPage() {
               id="partner"
               className="mt-8 scroll-mt-24 rounded-3xl border border-brand-orange/30 bg-brand-orange/10 p-7"
             >
-              <h3 className="text-lg font-bold text-brand-cream">
+              <h3 className="text-lg font-bold text-brand-ink">
                 Partner or sponsor
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/70">
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 Coworking spaces, stays, brands, and municipalities — reach a
                 global remote-work audience and help build the case study for
                 international 関係人口 in Osaka. Pick &ldquo;Partnership&rdquo; in
@@ -72,7 +69,10 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="border-t border-ink-border bg-ink-800 scroll-mt-24">
+      <section
+        id="faq"
+        className="scroll-mt-24 border-t border-paper-line bg-white"
+      >
         <div className="container-page py-16 sm:py-20">
           <SectionHeading
             align="center"
@@ -83,13 +83,13 @@ export default function ContactPage() {
             {FAQS.map((f) => (
               <details
                 key={f.q}
-                className="group rounded-2xl border border-ink-border bg-ink-700 p-5"
+                className="group rounded-2xl border border-paper-line bg-paper-cream p-5"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-brand-cream">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-brand-ink">
                   {f.q}
                   <ChevronDown className="h-5 w-5 shrink-0 text-brand-orange transition-transform group-open:rotate-180" />
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                <p className="mt-3 text-sm leading-relaxed text-muted">
                   {f.a}
                 </p>
               </details>
@@ -117,14 +117,14 @@ function ContactRow({
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel="noreferrer"
-      className="flex items-center gap-4 rounded-2xl border border-ink-border bg-ink-700 p-5 transition-colors hover:border-brand-orange/40"
+      className="flex items-center gap-4 rounded-2xl border border-paper-line bg-white p-5 transition-colors hover:border-brand-orange/40"
     >
       <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-orange/15">
         {icon}
       </span>
       <span>
-        <span className="block font-semibold text-white">{title}</span>
-        <span className="block text-sm text-white/55">{value}</span>
+        <span className="block font-semibold text-brand-ink">{title}</span>
+        <span className="block text-sm text-muted">{value}</span>
       </span>
     </a>
   );

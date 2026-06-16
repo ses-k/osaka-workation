@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Users, Clock } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui";
+import { FeatureIcon } from "@/components/feature-icon";
 import { Countdown } from "@/components/countdown";
 import { Newsletter } from "@/components/newsletter";
 import { MEETUPS, WORKATION } from "@/lib/site";
@@ -21,51 +22,51 @@ export default function EventsPage() {
         eyebrow="Events"
         title="Upcoming experiences"
         body="A 14-day flagship Workation, plus the weekly meetups that keep the community close all year round."
-        image="/events/event-3.jpg"
+        image="/img/events-hero.jpg"
       />
 
       {/* WORKATION HERO BLOCK */}
       <section id="workation" className="container-page scroll-mt-24 py-16 sm:py-20">
-        <div className="overflow-hidden rounded-3xl border border-brand-orange/30 bg-gradient-to-br from-brand-orange/15 via-ink-700 to-ink-800">
+        <div className="overflow-hidden rounded-3xl border border-paper-line bg-white">
           <div className="grid gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-3 py-1 text-xs font-bold text-white">
                 Now recruiting · Early bird open
               </span>
-              <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-brand-cream sm:text-5xl">
+              <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-brand-ink sm:text-5xl">
                 {WORKATION.title}
               </h2>
-              <p className="mt-5 max-w-md leading-relaxed text-white/75">
+              <p className="mt-5 max-w-md leading-relaxed text-muted">
                 {WORKATION.pitch}
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-white/80">
+                <span className="inline-flex items-center gap-2 rounded-full border border-paper-line bg-paper-cream px-4 py-2 text-brand-ink/80">
                   <Clock className="h-4 w-4 text-brand-orange" />
                   {WORKATION.duration}
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-white/80">
+                <span className="inline-flex items-center gap-2 rounded-full border border-paper-line bg-paper-cream px-4 py-2 text-brand-ink/80">
                   <Calendar className="h-4 w-4 text-brand-orange" />
                   {WORKATION.dates}
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-white/80">
+                <span className="inline-flex items-center gap-2 rounded-full border border-paper-line bg-paper-cream px-4 py-2 text-brand-ink/80">
                   <Users className="h-4 w-4 text-brand-orange" />
                   {WORKATION.capacity}
                 </span>
               </div>
 
               <div className="mt-8 max-w-sm">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/55">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
                   Kicks off in
                 </p>
                 <Countdown />
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-paper-line">
               <Image
-                src="/events/event-6.jpg"
-                alt="Osaka Workation evening gathering"
+                src="/img/workation-daytrip.jpg"
+                alt="Kansai autumn day trip near Osaka"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -84,12 +85,12 @@ export default function EventsPage() {
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {WORKATION.includes.map((i) => (
-            <div key={i.title} className="card p-6 hover:border-brand-orange/40">
-              <div className="text-3xl">{i.icon}</div>
-              <h3 className="mt-4 text-lg font-bold text-brand-cream">
+            <div key={i.title} className="card card-hover p-6">
+              <FeatureIcon name={i.icon} />
+              <h3 className="mt-4 text-lg font-bold text-brand-ink">
                 {i.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 {i.body}
               </p>
             </div>
@@ -98,7 +99,7 @@ export default function EventsPage() {
       </section>
 
       {/* PROGRAMME TIMELINE */}
-      <section className="border-y border-ink-border bg-ink-800">
+      <section className="border-y border-paper-line bg-white">
         <div className="container-page py-16 sm:py-20">
           <SectionHeading
             eyebrow="The 14 days"
@@ -109,7 +110,7 @@ export default function EventsPage() {
             {WORKATION.schedule.map((step, i) => (
               <div
                 key={step.title}
-                className="grid items-start gap-4 rounded-2xl border border-ink-border bg-ink-700 p-6 sm:grid-cols-[140px_1fr]"
+                className="grid items-start gap-4 rounded-2xl border border-paper-line bg-paper-cream p-6 sm:grid-cols-[150px_1fr]"
               >
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-orange/15 text-sm font-bold text-brand-orange">
@@ -120,10 +121,10 @@ export default function EventsPage() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-brand-cream">
+                  <h3 className="text-lg font-bold text-brand-ink">
                     {step.title}
                   </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-white/65">
+                  <p className="mt-1 text-sm leading-relaxed text-muted">
                     {step.body}
                   </p>
                 </div>
@@ -151,15 +152,15 @@ export default function EventsPage() {
         />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {MEETUPS.map((m) => (
-            <div key={m.title} className="card p-6 hover:border-brand-orange/40">
-              <div className="text-3xl">{m.icon}</div>
-              <h3 className="mt-4 text-lg font-bold text-brand-cream">
+            <div key={m.title} className="card card-hover p-6">
+              <FeatureIcon name={m.icon} />
+              <h3 className="mt-4 text-lg font-bold text-brand-ink">
                 {m.title}
               </h3>
               <p className="mt-1 text-sm font-medium text-brand-orange">
                 {m.cadence}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-white/60">
+              <p className="mt-3 text-sm leading-relaxed text-muted">
                 {m.body}
               </p>
             </div>
@@ -169,11 +170,11 @@ export default function EventsPage() {
 
       {/* WAITLIST */}
       <section className="container-page pb-20">
-        <div className="rounded-3xl border border-ink-border bg-ink-700 p-8 text-center sm:p-12">
-          <h2 className="text-2xl font-extrabold tracking-tight text-brand-cream sm:text-3xl">
-            Want first access to dates & pricing?
+        <div className="rounded-3xl border border-paper-line bg-paper-sand p-8 text-center sm:p-12">
+          <h2 className="text-2xl font-extrabold tracking-tight text-brand-ink sm:text-3xl">
+            Want first access to dates &amp; pricing?
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-white/65">
+          <p className="mx-auto mt-3 max-w-md text-muted">
             Waitlist members hear about the November Workation before anyone
             else.
           </p>

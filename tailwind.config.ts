@@ -11,15 +11,19 @@ const config: Config = {
       colors: {
         brand: {
           orange: "#ea5504",
-          orangeHover: "#ff6a1a",
+          orangeHover: "#cf4b03",
           cream: "#f7ede0",
+          ink: "#0f0f0f",
         },
-        ink: {
-          900: "#0b0b0d",
-          800: "#121216",
-          700: "#17171c",
-          600: "#1f1f26",
-          border: "#2a2a32",
+        paper: {
+          cream: "#f7ede0",
+          white: "#ffffff",
+          sand: "#f1e4d2",
+          line: "#e7dcc9",
+        },
+        muted: {
+          DEFAULT: "#6b6357",
+          soft: "#8a8073",
         },
       },
       fontFamily: {

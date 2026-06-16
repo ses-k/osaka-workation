@@ -30,7 +30,7 @@ const OFFER = [
 const AUDIENCE = [
   {
     title: "Nomads",
-    body: "Follow @osaka_digitalnomads_workation — the waitlist opens this summer.",
+    body: "Follow @osaka_workation — the waitlist opens this summer.",
   },
   {
     title: "Coworking spaces & stays",
@@ -49,7 +49,7 @@ export default function AboutPage() {
         eyebrow="About"
         title="Work from Osaka. Connect with the world."
         body="大阪から世界へ。ローカルとつながる国際ノマドコミュニティ"
-        image="/events/event-1.jpg"
+        image="/img/about-hero.jpg"
       />
 
       {/* WHO WE ARE */}
@@ -57,10 +57,10 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <span className="eyebrow">Who we are</span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-cream sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
               Osaka&apos;s first international digital nomad community
             </h2>
-            <div className="mt-5 space-y-4 leading-relaxed text-white/70">
+            <div className="mt-5 space-y-4 leading-relaxed text-muted">
               <p>
                 We connect remote workers from around the world with the real
                 Osaka — its people, neighborhoods, and creative culture —
@@ -74,10 +74,10 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-ink-border">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-paper-line">
             <Image
-              src="/events/event-2.jpg"
-              alt="Osaka nomad community gathering"
+              src="/img/about-cafe.jpg"
+              alt="Working from a cosy Osaka cafe"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
@@ -86,8 +86,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* WHY OSAKA / NUMBERS */}
-      <section className="border-y border-ink-border bg-ink-800">
+      {/* NUMBERS */}
+      <section className="border-y border-paper-line bg-white">
         <div className="container-page py-16 sm:py-20">
           <div className="grid gap-6 sm:grid-cols-3">
             {[
@@ -97,12 +97,12 @@ export default function AboutPage() {
             ].map((s) => (
               <div
                 key={s.l}
-                className="rounded-3xl border border-ink-border bg-ink-700 p-8 text-center"
+                className="rounded-3xl border border-paper-line bg-paper-cream p-8 text-center"
               >
                 <div className="text-4xl font-extrabold text-brand-orange">
                   {s.v}
                 </div>
-                <p className="mx-auto mt-2 max-w-[16rem] text-sm text-white/60">
+                <p className="mx-auto mt-2 max-w-[16rem] text-sm text-muted">
                   {s.l}
                 </p>
               </div>
@@ -123,10 +123,10 @@ export default function AboutPage() {
               <span className="text-sm font-bold text-brand-orange">
                 0{i + 1}
               </span>
-              <h3 className="mt-3 text-lg font-bold text-brand-cream">
+              <h3 className="mt-3 text-lg font-bold text-brand-ink">
                 {o.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 {o.body}
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
       </section>
 
       {/* JOIN / PARTNER */}
-      <section className="border-t border-ink-border bg-ink-800">
+      <section className="border-t border-paper-line bg-paper-sand">
         <div className="container-page py-16 sm:py-20">
           <SectionHeading
             eyebrow="Join or partner with us"
@@ -145,12 +145,10 @@ export default function AboutPage() {
             {AUDIENCE.map((a) => (
               <div
                 key={a.title}
-                className="rounded-3xl border border-ink-border bg-ink-700 p-7"
+                className="rounded-3xl border border-paper-line bg-white p-7"
               >
-                <h3 className="text-lg font-bold text-brand-cream">
-                  {a.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                <h3 className="text-lg font-bold text-brand-ink">{a.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   {a.body}
                 </p>
               </div>

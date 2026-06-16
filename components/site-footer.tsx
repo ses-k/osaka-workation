@@ -35,7 +35,7 @@ const COLUMNS = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-ink-border bg-ink-900">
+    <footer className="border-t border-paper-line bg-white">
       <div className="container-page py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
@@ -46,7 +46,7 @@ export function SiteFooter() {
               height={95}
               className="h-12 w-auto"
             />
-            <p className="mt-4 text-sm leading-relaxed text-white/55">
+            <p className="mt-4 text-sm leading-relaxed text-muted">
               Building Japan&apos;s friendliest international digital nomad
               community — one onigiri at a time.
             </p>
@@ -56,7 +56,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-orange hover:text-brand-orange"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-paper-line text-muted transition-colors hover:border-brand-orange hover:text-brand-orange"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -65,14 +65,14 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Discord"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-orange hover:text-brand-orange"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-paper-line text-muted transition-colors hover:border-brand-orange hover:text-brand-orange"
               >
                 <MessageCircle className="h-4 w-4" />
               </a>
               <a
                 href={`mailto:${SITE.email}`}
                 aria-label="Email"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-orange hover:text-brand-orange"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-paper-line text-muted transition-colors hover:border-brand-orange hover:text-brand-orange"
               >
                 <Mail className="h-4 w-4" />
               </a>
@@ -81,7 +81,7 @@ export function SiteFooter() {
 
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
+              <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
                 {col.title}
               </h3>
               <ul className="mt-4 space-y-3 text-sm">
@@ -108,7 +108,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink-border pt-6 text-xs text-white/45 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-paper-line pt-6 text-xs text-muted sm:flex-row">
           <p>© {new Date().getFullYear()} Osaka Workation. Made with care in Osaka 大阪.</p>
           <p>{SITE.instagramHandle}</p>
         </div>

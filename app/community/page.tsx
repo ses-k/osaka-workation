@@ -12,12 +12,11 @@ export const metadata: Metadata = {
 };
 
 const GALLERY = [
-  "event-4.jpg",
-  "event-3.jpg",
-  "event-2.jpg",
-  "event-6.jpg",
-  "event-1.jpg",
-  "event-5.jpg",
+  "/events/event-1.jpg",
+  "/events/event-2.jpg",
+  "/events/event-3.jpg",
+  "/events/event-5.jpg",
+  "/events/event-6.jpg",
 ];
 
 export default function CommunityPage() {
@@ -33,30 +32,30 @@ export default function CommunityPage() {
       {/* DISCORD STAT BLOCK */}
       <section className="container-page py-16 sm:py-20">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-          <div className="rounded-3xl border border-ink-border bg-ink-700 p-8">
+          <div className="rounded-3xl border border-paper-line bg-white p-8">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-orange/15">
                 <MessageCircle className="h-5 w-5 text-brand-orange" />
               </span>
               <div>
-                <h3 className="text-lg font-bold text-brand-cream">
+                <h3 className="text-lg font-bold text-brand-ink">
                   Osaka Nomads
                 </h3>
-                <p className="text-sm text-white/55">Discord server</p>
+                <p className="text-sm text-muted">Discord server</p>
               </div>
             </div>
             <div className="mt-7 grid grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-ink-border bg-ink-600 p-5 text-center">
+              <div className="rounded-2xl border border-paper-line bg-paper-cream p-5 text-center">
                 <div className="text-3xl font-extrabold text-brand-orange">
                   127
                 </div>
-                <div className="mt-1 text-sm text-white/55">Members</div>
+                <div className="mt-1 text-sm text-muted">Members</div>
               </div>
-              <div className="rounded-2xl border border-ink-border bg-ink-600 p-5 text-center">
+              <div className="rounded-2xl border border-paper-line bg-paper-cream p-5 text-center">
                 <div className="text-3xl font-extrabold text-brand-orange">
                   23
                 </div>
-                <div className="mt-1 text-sm text-white/55">Online now</div>
+                <div className="mt-1 text-sm text-muted">Online now</div>
               </div>
             </div>
             <a
@@ -78,7 +77,7 @@ export default function CommunityPage() {
       </section>
 
       {/* GALLERY */}
-      <section className="border-y border-ink-border bg-ink-800">
+      <section className="border-y border-paper-line bg-white">
         <div className="container-page py-16 sm:py-20">
           <SectionHeading
             align="center"
@@ -89,12 +88,12 @@ export default function CommunityPage() {
             {GALLERY.map((img, i) => (
               <div
                 key={img}
-                className={`relative overflow-hidden rounded-2xl border border-ink-border ${
+                className={`relative overflow-hidden rounded-2xl border border-paper-line ${
                   i === 0 ? "col-span-2 row-span-2" : ""
-                } ${i === 3 ? "lg:col-span-2" : ""}`}
+                } ${i === 4 ? "lg:col-span-2" : ""}`}
               >
                 <Image
-                  src={`/events/${img}`}
+                  src={img}
                   alt="Osaka nomad community event"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
@@ -108,17 +107,11 @@ export default function CommunityPage() {
 
       {/* TESTIMONIALS */}
       <section className="container-page py-16 sm:py-20">
-        <SectionHeading
-          eyebrow="In their words"
-          title="What members say"
-        />
+        <SectionHeading eyebrow="In their words" title="What members say" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {TESTIMONIALS.map((t) => (
-            <figure
-              key={t.name}
-              className="card p-7"
-            >
-              <blockquote className="text-lg leading-relaxed text-brand-cream">
+            <figure key={t.name} className="card p-7">
+              <blockquote className="text-lg leading-relaxed text-brand-ink">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-5 flex items-center gap-3">
@@ -126,10 +119,10 @@ export default function CommunityPage() {
                   {t.initials}
                 </span>
                 <span>
-                  <span className="block font-semibold text-white">
+                  <span className="block font-semibold text-brand-ink">
                     {t.name} <span className="ml-1">{t.flag}</span>
                   </span>
-                  <span className="block text-sm text-white/55">{t.role}</span>
+                  <span className="block text-sm text-muted">{t.role}</span>
                 </span>
               </figcaption>
             </figure>

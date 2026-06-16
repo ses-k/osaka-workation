@@ -30,10 +30,10 @@ export function ContactForm() {
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-orange/20">
           <Check className="h-6 w-6 text-brand-orange" />
         </div>
-        <h3 className="mt-4 text-xl font-bold text-brand-cream">
+        <h3 className="mt-4 text-xl font-bold text-brand-ink">
           Thanks, {form.name || "friend"}!
         </h3>
-        <p className="mt-2 text-sm text-white/65">
+        <p className="mt-2 text-sm text-muted">
           We&apos;ve got your message and will reply within a couple of days.
           See you in Osaka soon.
         </p>
@@ -44,7 +44,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={submit}
-      className="rounded-3xl border border-ink-border bg-ink-700 p-6 sm:p-8"
+      className="rounded-3xl border border-paper-line bg-white p-6 sm:p-8"
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Name">
@@ -75,7 +75,7 @@ export function ContactForm() {
           className={inputCls}
         >
           {TOPICS.map((t) => (
-            <option key={t} value={t} className="bg-ink-700">
+            <option key={t} value={t} className="bg-white">
               {t}
             </option>
           ))}
@@ -101,7 +101,7 @@ export function ContactForm() {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-brand-orange focus:outline-none";
+  "w-full rounded-xl border border-paper-line bg-paper-cream px-4 py-3 text-sm text-brand-ink placeholder:text-muted-soft focus:border-brand-orange focus:bg-white focus:outline-none";
 
 function Field({
   label,
@@ -114,7 +114,7 @@ function Field({
 }) {
   return (
     <label className={`block ${className}`}>
-      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-white/55">
+      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted">
         {label}
       </span>
       {children}

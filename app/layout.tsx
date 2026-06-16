@@ -38,7 +38,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-ink-900 font-sans">
+      <body className="min-h-screen bg-paper-cream font-sans text-brand-ink">
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

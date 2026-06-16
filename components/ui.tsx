@@ -18,11 +18,11 @@ export function SectionHeading({
       className={`${align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"} ${className}`}
     >
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-cream sm:text-4xl">
+      <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
         {title}
       </h2>
       {body && (
-        <p className="mt-4 text-base leading-relaxed text-white/60">{body}</p>
+        <p className="mt-4 text-base leading-relaxed text-muted">{body}</p>
       )}
     </div>
   );
@@ -36,31 +36,29 @@ const MARQUEE_ITEMS = [
   ["Meet fellow nomads", "仲間と出会う"],
 ];
 
-export function Marquee() {
+function MarqueeRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
   const row = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
   return (
-    <div className="relative flex overflow-hidden border-y border-ink-border bg-ink-800 py-4">
-      <div className="flex shrink-0 animate-marquee items-center gap-8 pr-8">
-        {row.map((item, i) => (
-          <span key={i} className="flex items-center gap-8 whitespace-nowrap">
-            <span className="text-sm font-semibold text-white">{item[0]}</span>
-            <span className="text-sm text-white/40">{item[1]}</span>
-            <span className="text-brand-orange">◦</span>
-          </span>
-        ))}
-      </div>
-      <div
-        className="flex shrink-0 animate-marquee items-center gap-8 pr-8"
-        aria-hidden
-      >
-        {row.map((item, i) => (
-          <span key={i} className="flex items-center gap-8 whitespace-nowrap">
-            <span className="text-sm font-semibold text-white">{item[0]}</span>
-            <span className="text-sm text-white/40">{item[1]}</span>
-            <span className="text-brand-orange">◦</span>
-          </span>
-        ))}
-      </div>
+    <div
+      className="flex shrink-0 animate-marquee items-center gap-8 pr-8"
+      aria-hidden={ariaHidden}
+    >
+      {row.map((item, i) => (
+        <span key={i} className="flex items-center gap-8 whitespace-nowrap">
+          <span className="text-sm font-semibold text-brand-ink">{item[0]}</span>
+          <span className="text-sm text-muted-soft">{item[1]}</span>
+          <span className="text-brand-orange">◦</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+export function Marquee() {
+  return (
+    <div className="relative flex overflow-hidden border-y border-paper-line bg-white py-4">
+      <MarqueeRow />
+      <MarqueeRow ariaHidden />
     </div>
   );
 }
@@ -82,18 +80,25 @@ export function CTAStrip({
 }) {
   return (
     <section className="container-page py-20">
-      <div className="relative overflow-hidden rounded-3xl border border-brand-orange/30 bg-gradient-to-br from-brand-orange/20 via-ink-700 to-ink-800 px-8 py-14 text-center sm:px-14">
-        <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-brand-orange/30 blur-3xl" />
-        <h2 className="relative text-3xl font-extrabold tracking-tight text-brand-cream sm:text-4xl">
+      <div className="relative overflow-hidden rounded-3xl bg-brand-orange px-8 py-14 text-center sm:px-14">
+        <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/15 blur-3xl" />
+        <div className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-black/10 blur-3xl" />
+        <h2 className="relative text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
           {title}
         </h2>
-        <p className="relative mx-auto mt-4 max-w-xl text-white/70">{body}</p>
+        <p className="relative mx-auto mt-4 max-w-xl text-white/90">{body}</p>
         <div className="relative mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link href={primaryHref} className="btn-primary">
+          <Link
+            href={primaryHref}
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-orange transition-colors hover:bg-paper-cream"
+          >
             {primaryLabel}
           </Link>
           {secondaryHref && secondaryLabel && (
-            <Link href={secondaryHref} className="btn-ghost">
+            <Link
+              href={secondaryHref}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
               {secondaryLabel}
             </Link>
           )}

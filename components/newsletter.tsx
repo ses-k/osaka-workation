@@ -17,7 +17,7 @@ export function Newsletter({ compact = false }: { compact?: boolean }) {
   if (done) {
     return (
       <div
-        className={`flex items-center gap-3 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-5 py-3 text-sm font-medium text-brand-cream ${
+        className={`flex items-center gap-3 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-5 py-3 text-sm font-medium text-brand-ink ${
           compact ? "" : "justify-center"
         }`}
       >
@@ -38,7 +38,7 @@ export function Newsletter({ compact = false }: { compact?: boolean }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="you@email.com"
-        className="w-full flex-1 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/40 focus:border-brand-orange focus:outline-none"
+        className="w-full flex-1 rounded-full border border-paper-line bg-white px-5 py-3 text-sm text-brand-ink placeholder:text-muted-soft focus:border-brand-orange focus:outline-none"
       />
       <button type="submit" className="btn-primary whitespace-nowrap">
         Join the waitlist

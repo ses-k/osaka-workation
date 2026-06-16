@@ -2,10 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, MapPin, Wifi } from "lucide-react";
 import { Marquee, SectionHeading } from "@/components/ui";
+import { FeatureIcon } from "@/components/feature-icon";
 import { Countdown } from "@/components/countdown";
 import { Newsletter } from "@/components/newsletter";
 import {
   DISTRICTS,
+  FOOD,
   SITE,
   STATS,
   WHY_OSAKA,
@@ -16,30 +18,30 @@ export default function HomePage() {
   return (
     <>
       {/* ---------- HERO ---------- */}
-      <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden">
+      <section className="relative isolate flex min-h-[94vh] items-center overflow-hidden">
         <Image
-          src="/events/event-4.jpg"
-          alt="Osaka digital nomad community meetup"
+          src="/img/hero-osaka.jpg"
+          alt="Dotonbori canal in central Osaka"
           fill
           priority
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="hero-overlay absolute inset-0" />
+        <div className="hero-scrim absolute inset-0" />
 
         <div className="container-page relative z-10 grid gap-10 pb-16 pt-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-white backdrop-blur">
-              ✈ Osaka, Japan · Workation 2026
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-white/80 px-4 py-1.5 text-xs font-semibold tracking-wide text-brand-orange backdrop-blur">
+              Osaka, Japan · Workation 2026
             </span>
-            <h1 className="mt-6 text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-5xl font-extrabold leading-[0.95] tracking-tight text-brand-ink sm:text-6xl lg:text-7xl">
               Work.
               <br />
               Explore.
               <br />
               <span className="text-brand-orange">Connect.</span>
             </h1>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-white/80">
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-brand-ink/80">
               Osaka&apos;s first international digital nomad community — real
               stays, real people, real Japan.
             </p>
@@ -51,7 +53,7 @@ export default function HomePage() {
                 href={SITE.discord}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-ghost"
+                className="btn-light"
               >
                 Join Discord <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -59,20 +61,20 @@ export default function HomePage() {
           </div>
 
           {/* stats card */}
-          <div className="animate-fade-up rounded-3xl border border-white/15 bg-ink-900/55 p-6 backdrop-blur-md sm:p-8">
+          <div className="animate-fade-up rounded-3xl border border-paper-line bg-white/85 p-6 shadow-[0_24px_60px_-30px_rgba(15,15,15,0.4)] backdrop-blur-md sm:p-8">
             <div className="grid grid-cols-2 gap-x-6 gap-y-7">
               {STATS.map((s) => (
                 <div key={s.label}>
                   <div className="text-3xl font-extrabold text-brand-orange sm:text-4xl">
                     {s.value}
                   </div>
-                  <div className="mt-1 text-sm text-white/65">{s.label}</div>
+                  <div className="mt-1 text-sm text-muted">{s.label}</div>
                 </div>
               ))}
             </div>
-            <div className="mt-7 flex items-center gap-3 border-t border-white/10 pt-5 text-sm text-white/70">
+            <div className="mt-7 flex items-center gap-3 border-t border-paper-line pt-5 text-sm text-muted">
               <MapPin className="h-4 w-4 text-brand-orange" />
-              Based in Osaka · 通天閣 Tsutenkaku neighborhood
+              Based in Osaka · Dotonbori &amp; Tsutenkaku
             </div>
           </div>
         </div>
@@ -89,15 +91,12 @@ export default function HomePage() {
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {WHY_OSAKA.map((w) => (
-            <div
-              key={w.title}
-              className="card p-6 hover:border-brand-orange/40"
-            >
-              <div className="text-3xl">{w.icon}</div>
-              <h3 className="mt-4 text-lg font-bold text-brand-cream">
+            <div key={w.title} className="card card-hover p-6">
+              <FeatureIcon name={w.icon} />
+              <h3 className="mt-4 text-lg font-bold text-brand-ink">
                 {w.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 {w.body}
               </p>
             </div>
@@ -106,12 +105,12 @@ export default function HomePage() {
       </section>
 
       {/* ---------- NOVEMBER WORKATION FEATURE ---------- */}
-      <section className="border-y border-ink-border bg-ink-800">
+      <section className="border-y border-paper-line bg-white">
         <div className="container-page grid gap-10 py-20 sm:py-24 lg:grid-cols-2 lg:items-center">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-ink-border">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-paper-line">
             <Image
-              src="/events/event-6.jpg"
-              alt="Evening rooftop gathering with the Osaka nomad community"
+              src="/img/workation-feature.jpg"
+              alt="Sunset gathering with the Osaka nomad community"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -123,13 +122,13 @@ export default function HomePage() {
 
           <div>
             <span className="eyebrow">The flagship event</span>
-            <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-brand-cream sm:text-5xl">
+            <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-brand-ink sm:text-5xl">
               {WORKATION.title}
             </h2>
             <p className="mt-3 text-lg font-semibold text-brand-orange">
               {WORKATION.duration} · {WORKATION.dates} · {WORKATION.capacity}
             </p>
-            <p className="mt-4 max-w-md leading-relaxed text-white/70">
+            <p className="mt-4 max-w-md leading-relaxed text-muted">
               {WORKATION.pitch}
             </p>
 
@@ -146,10 +145,10 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/75">
+            <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-brand-ink/80">
               {WORKATION.includes.slice(0, 6).map((i) => (
-                <li key={i.title} className="flex items-center gap-2">
-                  <span>{i.icon}</span>
+                <li key={i.title} className="flex items-center gap-2.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
                   {i.title}
                 </li>
               ))}
@@ -178,7 +177,7 @@ export default function HomePage() {
             <Link
               key={d.name}
               href="/stays"
-              className="group relative overflow-hidden rounded-3xl border border-ink-border"
+              className="group relative overflow-hidden rounded-3xl border border-paper-line"
             >
               <div className="relative aspect-[4/5]">
                 <Image
@@ -188,43 +187,72 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/85 via-brand-ink/25 to-transparent" />
               </div>
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="text-sm font-semibold text-brand-orange">
                   {d.kanji}
                 </div>
                 <h3 className="mt-1 text-2xl font-bold text-white">{d.name}</h3>
-                <p className="mt-2 text-sm text-white/70">{d.body}</p>
+                <p className="mt-2 text-sm text-white/85">{d.body}</p>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
+      {/* ---------- TASTE OF OSAKA ---------- */}
+      <section className="border-y border-paper-line bg-paper-sand">
+        <div className="container-page py-20 sm:py-24">
+          <SectionHeading
+            eyebrow="Live like a local"
+            title="Your lunch break, upgraded"
+            body="Takoyaki on the corner, ramen at midnight, a new favourite spot every week. This is the city that eats best."
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+            {FOOD.map((f) => (
+              <div
+                key={f.label}
+                className="group relative aspect-[5/4] overflow-hidden rounded-3xl border border-paper-line"
+              >
+                <Image
+                  src={f.image}
+                  alt={f.label}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/70 to-transparent" />
+                <span className="absolute bottom-4 left-5 text-lg font-bold text-white">
+                  {f.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ---------- COMMUNITY PREVIEW ---------- */}
-      <section className="border-y border-ink-border bg-ink-800">
-        <div className="container-page grid gap-10 py-20 sm:py-24 lg:grid-cols-2 lg:items-center">
+      <section className="container-page py-20 sm:py-24">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="eyebrow">Community</span>
-            <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-brand-cream sm:text-5xl">
+            <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-brand-ink sm:text-5xl">
               Join 100+ digital nomads
             </h2>
-            <p className="mt-4 max-w-md leading-relaxed text-white/70">
+            <p className="mt-4 max-w-md leading-relaxed text-muted">
               From Thursday coffee meetups to nabe nights and photo walks, this
               is a crew of locals and internationals building Osaka&apos;s first
               real nomad scene.
             </p>
-            <div className="mt-6 flex items-center gap-3 rounded-2xl border border-ink-border bg-ink-700 p-4">
-              <div className="flex items-center gap-3">
-                <span className="flex h-3 w-3">
-                  <span className="absolute h-3 w-3 animate-ping rounded-full bg-brand-orange/60" />
-                  <span className="h-3 w-3 rounded-full bg-brand-orange" />
-                </span>
-                <span className="text-sm text-white/70">
-                  <b className="text-white">23</b> online now on Discord
-                </span>
-              </div>
+            <div className="mt-6 flex items-center gap-3 rounded-2xl border border-paper-line bg-white p-4">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-3 w-3 animate-ping rounded-full bg-brand-orange/60" />
+                <span className="inline-flex h-3 w-3 rounded-full bg-brand-orange" />
+              </span>
+              <span className="text-sm text-muted">
+                <b className="text-brand-ink">23</b> online now on Discord
+              </span>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -239,41 +267,44 @@ export default function HomePage() {
                 Meet the community
               </Link>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-sm text-white/60">
+            <div className="mt-8 flex items-center gap-2 text-sm text-muted">
               <Wifi className="h-4 w-4 text-brand-orange" /> Average 100+ Mbps in
-              Osaka cafes & coworking
+              Osaka cafes &amp; coworking
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            {["event-3.jpg", "event-2.jpg", "event-1.jpg", "event-5.jpg"].map(
-              (img, i) => (
-                <div
-                  key={img}
-                  className={`relative overflow-hidden rounded-2xl border border-ink-border ${
-                    i % 3 === 0 ? "aspect-[4/5]" : "aspect-square"
-                  }`}
-                >
-                  <Image
-                    src={`/events/${img}`}
-                    alt="Osaka nomad community event"
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover"
-                  />
-                </div>
-              ),
-            )}
+            {[
+              "/img/home-coworking.jpg",
+              "/img/home-meetup.jpg",
+              "/img/home-laptop.jpg",
+              "/img/home-cafe.jpg",
+            ].map((img, i) => (
+              <div
+                key={img}
+                className={`relative overflow-hidden rounded-2xl border border-paper-line ${
+                  i % 3 === 0 ? "aspect-[4/5]" : "aspect-square"
+                }`}
+              >
+                <Image
+                  src={img}
+                  alt="Osaka nomad community moment"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ---------- NEWSLETTER ---------- */}
-      <section id="newsletter" className="container-page py-20 sm:py-24">
-        <div className="relative overflow-hidden rounded-3xl border border-brand-orange/30 bg-gradient-to-br from-brand-orange/15 via-ink-700 to-ink-800 px-6 py-14 text-center sm:px-14">
-          <div className="absolute -left-16 -top-16 h-48 w-48 rounded-full bg-brand-orange/30 blur-3xl" />
+      <section id="newsletter" className="container-page pb-24">
+        <div className="relative overflow-hidden rounded-3xl bg-brand-ink px-6 py-14 text-center sm:px-14">
+          <div className="absolute -left-16 -top-16 h-48 w-48 rounded-full bg-brand-orange/40 blur-3xl" />
           <span className="eyebrow relative">Stay in the loop</span>
-          <h2 className="relative mt-3 text-3xl font-extrabold tracking-tight text-brand-cream sm:text-4xl">
+          <h2 className="relative mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Get the waitlist before anyone else
           </h2>
           <p className="relative mx-auto mt-4 max-w-lg text-white/70">

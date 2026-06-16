@@ -27,14 +27,14 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled || open
-          ? "border-b border-ink-border bg-ink-900/90 backdrop-blur"
-          : "border-b border-transparent bg-transparent"
+          ? "border-b border-paper-line bg-paper-cream/85 backdrop-blur"
+          : "border-b border-transparent bg-paper-cream/30 backdrop-blur-sm"
       }`}
     >
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5" aria-label={SITE.name}>
           <Image
-            src="/logo/logo-mark-white.png"
+            src="/logo/logo-mark-orange.png"
             alt=""
             width={28}
             height={50}
@@ -42,10 +42,10 @@ export function SiteHeader() {
             priority
           />
           <span className="flex flex-col leading-none">
-            <span className="text-[15px] font-extrabold tracking-[0.18em] text-white">
+            <span className="text-[15px] font-extrabold tracking-[0.18em] text-brand-ink">
               OSAKA
             </span>
-            <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/55">
+            <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-brand-orange">
               Digital Nomads Workation
             </span>
           </span>
@@ -63,8 +63,8 @@ export function SiteHeader() {
                 href={item.href}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "text-white"
-                    : "text-white/65 hover:text-white"
+                    ? "text-brand-orange"
+                    : "text-brand-ink/70 hover:text-brand-ink"
                 }`}
               >
                 {item.label}
@@ -87,7 +87,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-ink/15 text-brand-ink md:hidden"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -95,13 +95,13 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-ink-border bg-ink-900 md:hidden">
+        <div className="border-t border-paper-line bg-paper-cream md:hidden">
           <nav className="container-page flex flex-col py-4">
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-xl px-3 py-3 text-base font-medium text-white/80 hover:bg-white/5 hover:text-white"
+                className="rounded-xl px-3 py-3 text-base font-medium text-brand-ink/80 hover:bg-brand-ink/5 hover:text-brand-ink"
               >
                 {item.label}
               </Link>
