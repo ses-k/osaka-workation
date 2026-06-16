@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui";
+import { CountUp } from "@/components/count-up";
+import { AboutTabs } from "@/components/about-tabs";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,21 +13,6 @@ export const metadata: Metadata = {
   description:
     "Osaka Workation connects remote workers from around the world with the real Osaka — its people, neighborhoods, and creative culture.",
 };
-
-const OFFER = [
-  {
-    title: "Social media",
-    body: "We document the real Osaka for a global remote-work audience across Instagram and TikTok.",
-  },
-  {
-    title: "Monthly meetups",
-    body: "Coffee mornings, cooking classes, and photo walks that turn strangers into a community.",
-  },
-  {
-    title: "Annual Workation",
-    body: "A 14-day November flagship that bundles stays, coworking, and Kansai culture into one package.",
-  },
-];
 
 const AUDIENCE = [
   {
@@ -51,6 +38,29 @@ export default function AboutPage() {
         body="大阪から世界へ。ローカルとつながる国際ノマドコミュニティ"
         image="/img/about-hero.jpg"
       />
+
+      {/* BRAND LOCKUP */}
+      <section className="container-page py-14 sm:py-16">
+        <div className="flex flex-col items-center gap-6 rounded-3xl border border-paper-line bg-white px-6 py-12 text-center">
+          <Image
+            src="/logo/logo-orange.png"
+            alt={SITE.name}
+            width={420}
+            height={200}
+            priority
+            className="h-20 w-auto sm:h-24"
+          />
+          <p className="text-lg font-semibold text-brand-ink">{SITE.tagline}</p>
+          <p className="max-w-xl text-sm leading-relaxed text-muted">
+            {SITE.taglineJa}
+          </p>
+          <div className="mt-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
+            <span className="h-px w-8 bg-brand-orange/40" />
+            Est. Osaka 2026
+            <span className="h-px w-8 bg-brand-orange/40" />
+          </div>
+        </div>
+      </section>
 
       {/* WHO WE ARE */}
       <section className="container-page py-16 sm:py-20">
@@ -91,17 +101,19 @@ export default function AboutPage() {
         <div className="container-page py-16 sm:py-20">
           <div className="grid gap-6 sm:grid-cols-3">
             {[
-              { v: "30%", l: "Cheaper than Tokyo, same quality of life" },
-              { v: "100+", l: "Mbps average in cafes & coworking" },
-              { v: "3", l: "Languages spoken across the community" },
+              { to: 30, suffix: "%", l: "Cheaper than Tokyo, same quality of life" },
+              { to: 100, suffix: "+", l: "Mbps average in cafes & coworking" },
+              { to: 3, suffix: "", l: "Languages spoken across the community" },
             ].map((s) => (
               <div
                 key={s.l}
                 className="rounded-3xl border border-paper-line bg-paper-cream p-8 text-center"
               >
-                <div className="text-4xl font-extrabold text-brand-orange">
-                  {s.v}
-                </div>
+                <CountUp
+                  to={s.to}
+                  suffix={s.suffix}
+                  className="block text-5xl font-extrabold tracking-tight text-brand-orange"
+                />
                 <p className="mx-auto mt-2 max-w-[16rem] text-sm text-muted">
                   {s.l}
                 </p>
@@ -116,21 +128,10 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="What we do"
           title="Three ways we build the community"
+          body="Tap through to see how it fits together."
         />
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {OFFER.map((o, i) => (
-            <div key={o.title} className="card p-7">
-              <span className="text-sm font-bold text-brand-orange">
-                0{i + 1}
-              </span>
-              <h3 className="mt-3 text-lg font-bold text-brand-ink">
-                {o.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {o.body}
-              </p>
-            </div>
-          ))}
+        <div className="mt-12">
+          <AboutTabs />
         </div>
       </section>
 

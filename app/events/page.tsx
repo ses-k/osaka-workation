@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui";
 import { FeatureIcon } from "@/components/feature-icon";
 import { Countdown } from "@/components/countdown";
 import { Newsletter } from "@/components/newsletter";
+import { Pricing } from "@/components/pricing";
 import { MEETUPS, WORKATION } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -140,6 +141,18 @@ export default function EventsPage() {
               Partner or sponsor
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="container-page scroll-mt-24 py-16 sm:py-20">
+        <SectionHeading
+          eyebrow="Pricing"
+          title="One ticket, everything included"
+          body="Pick the plan that fits, then join the waitlist to lock it in. Every plan covers your stay, coworking, experiences, and dinners — no hidden extras."
+        />
+        <div className="mt-12">
+          <Pricing />
         </div>
       </section>
 

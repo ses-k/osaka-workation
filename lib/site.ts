@@ -270,6 +270,52 @@ export const FAQS = [
   },
 ];
 
+// NOTE: indicative pricing — swap in your confirmed numbers here.
+export const PRICING = [
+  {
+    key: "earlybird",
+    name: "Early Bird",
+    price: "¥198,000",
+    note: "First 20 spots only",
+    popular: true,
+    features: [
+      "14 nights curated stay",
+      "Daytime coworking access",
+      "All cultural experiences",
+      "Kyoto & Nara day trips",
+      "Opening & closing dinners",
+    ],
+  },
+  {
+    key: "standard",
+    name: "Standard",
+    price: "¥248,000",
+    note: "Full programme",
+    popular: false,
+    features: [
+      "14 nights curated stay",
+      "Daytime coworking access",
+      "All cultural experiences",
+      "Kyoto & Nara day trips",
+      "Opening & closing dinners",
+    ],
+  },
+  {
+    key: "team",
+    name: "Team & Sponsor",
+    price: "Custom",
+    note: "For companies & partners",
+    popular: false,
+    features: [
+      "Group rates for 3+",
+      "Private team sessions",
+      "Brand visibility options",
+      "Custom programme add-ons",
+      "Dedicated coordinator",
+    ],
+  },
+];
+
 export const FOOD = [
   { image: "/img/food-ramen.jpg", label: "Ramen counters" },
   { image: "/img/food-takoyaki.jpg", label: "Street takoyaki" },

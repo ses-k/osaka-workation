@@ -12,11 +12,12 @@ export const metadata: Metadata = {
 };
 
 const GALLERY = [
-  "/events/event-1.jpg",
-  "/events/event-2.jpg",
-  "/events/event-3.jpg",
-  "/events/event-5.jpg",
-  "/events/event-6.jpg",
+  "/img/community-1.jpg",
+  "/img/community-2.jpg",
+  "/img/community-3.jpg",
+  "/img/community-4.jpg",
+  "/img/community-5.jpg",
+  "/img/community-6.jpg",
 ];
 
 export default function CommunityPage() {
@@ -26,7 +27,7 @@ export default function CommunityPage() {
         eyebrow="Community"
         title="The people make the place"
         body="Locals and internationals, engineers and artists, first-timers and Japan veterans — all building Osaka's friendliest nomad community together."
-        image="/events/event-4.jpg"
+        image="/img/community-hero.jpg"
       />
 
       {/* DISCORD STAT BLOCK */}
@@ -84,20 +85,18 @@ export default function CommunityPage() {
             eyebrow="Real events, real photos"
             title="Moments from the community"
           />
-          <div className="mt-12 grid auto-rows-[200px] grid-cols-2 gap-4 sm:auto-rows-[240px] lg:grid-cols-4">
-            {GALLERY.map((img, i) => (
+          <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-3">
+            {GALLERY.map((img) => (
               <div
                 key={img}
-                className={`relative overflow-hidden rounded-2xl border border-paper-line ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
-                } ${i === 4 ? "lg:col-span-2" : ""}`}
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-paper-line"
               >
                 <Image
                   src={img}
-                  alt="Osaka nomad community event"
+                  alt="Osaka nomad community moment"
                   fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             ))}
