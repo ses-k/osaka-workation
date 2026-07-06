@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, MessageCircle, Mail } from "lucide-react";
+import { Instagram, MessageCircle, Mail, Link2 } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const COLUMNS = [
@@ -19,7 +19,7 @@ const COLUMNS = [
       { label: "Discord", href: SITE.discord, external: true },
       { label: "Meetups", href: "/events#meetups" },
       { label: "Instagram", href: SITE.instagram, external: true },
-      { label: "Newsletter", href: "/#newsletter" },
+      { label: "All links (Linktree)", href: SITE.linktree, external: true },
     ],
   },
   {
@@ -75,6 +75,15 @@ export function SiteFooter() {
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-paper-line text-muted transition-colors hover:border-brand-orange hover:text-brand-orange"
               >
                 <Mail className="h-4 w-4" />
+              </a>
+              <a
+                href={SITE.linktree}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Linktree"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-paper-line text-muted transition-colors hover:border-brand-orange hover:text-brand-orange"
+              >
+                <Link2 className="h-4 w-4" />
               </a>
             </div>
           </div>

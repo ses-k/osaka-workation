@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { TallyFab } from "@/components/tally-fab";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://osakaworkation.com"),
@@ -42,6 +44,11 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <TallyFab />
+        <Script
+          src="https://tally.so/widgets/embed.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

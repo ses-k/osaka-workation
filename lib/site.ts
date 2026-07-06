@@ -7,6 +7,9 @@ export const SITE = {
   instagramHandle: "@osaka_workation",
   discord: "https://discord.gg",
   email: "kokorolxy7@gmail.com",
+  linktree: "https://linktr.ee/osakaworkation",
+  tallyId: "eqPAMQ",
+  tallyUrl: "https://tally.so/r/eqPAMQ",
 };
 
 export const NAV = [

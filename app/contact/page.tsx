@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instagram, MessageCircle, Mail, ChevronDown } from "lucide-react";
+import { Instagram, MessageCircle, Mail, ChevronDown, Link2 } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui";
 import { ContactForm } from "@/components/contact-form";
@@ -44,6 +44,12 @@ export default function ContactPage() {
                 title="Email"
                 value={SITE.email}
                 href={`mailto:${SITE.email}`}
+              />
+              <ContactRow
+                icon={<Link2 className="h-5 w-5 text-brand-orange" />}
+                title="All our links"
+                value="linktr.ee/osakaworkation"
+                href={SITE.linktree}
               />
             </div>
 
