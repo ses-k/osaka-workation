@@ -10,6 +10,7 @@ const COLUMNS = [
       { label: "Stays", href: "/stays" },
       { label: "Events", href: "/events" },
       { label: "Community", href: "/community" },
+      { label: "Blog", href: "/blog" },
       { label: "Workation 2026", href: "/events#workation" },
     ],
   },

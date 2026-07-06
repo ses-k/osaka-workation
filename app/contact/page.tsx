@@ -3,6 +3,7 @@ import { Instagram, MessageCircle, Mail, ChevronDown, Link2 } from "lucide-react
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui";
 import { ContactForm } from "@/components/contact-form";
+import { JsonLd } from "@/components/json-ld";
 import { FAQS, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,6 +15,17 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }}
+      />
       <PageHero
         eyebrow="Contact"
         title="Let's talk"

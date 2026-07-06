@@ -4,6 +4,8 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { TallyFab } from "@/components/tally-fab";
+import { JsonLd } from "@/components/json-ld";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://osakaworkation.com"),
@@ -41,6 +43,21 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-paper-cream font-sans text-brand-ink">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: SITE.name,
+            alternateName: SITE.shortName,
+            url: "https://osakaworkation.com",
+            logo: "https://osakaworkation.com/icon.png",
+            description:
+              "Osaka's first international digital nomad community — stays, meetups, and the 14-day November Workation.",
+            email: SITE.email,
+            areaServed: "Osaka, Japan",
+            sameAs: [SITE.instagram, SITE.linktree],
+          }}
+        />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

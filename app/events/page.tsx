@@ -11,6 +11,7 @@ import { IncludesGrid } from "@/components/includes-grid";
 import { WorkationTimeline } from "@/components/workation-timeline";
 import { MeetupCard } from "@/components/meetup-card";
 import { PhotoWall } from "@/components/photo-wall";
+import { JsonLd } from "@/components/json-ld";
 import { MEETUPS, WORKATION } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,6 +23,37 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: WORKATION.title,
+          description: WORKATION.pitch,
+          startDate: "2026-11-02",
+          endDate: "2026-11-15",
+          eventAttendanceMode:
+            "https://schema.org/OfflineEventAttendanceMode",
+          eventStatus: "https://schema.org/EventScheduled",
+          location: {
+            "@type": "Place",
+            name: "Osaka, Japan",
+            address: { "@type": "PostalAddress", addressLocality: "Osaka", addressCountry: "JP" },
+          },
+          image: "https://osakaworkation.com/img/events-hero.jpg",
+          organizer: {
+            "@type": "Organization",
+            name: "OSAKA Workation",
+            url: "https://osakaworkation.com",
+          },
+          offers: {
+            "@type": "Offer",
+            price: "30000",
+            priceCurrency: "JPY",
+            url: "https://osakaworkation.com/events#pricing",
+            availability: "https://schema.org/InStock",
+          },
+        }}
+      />
       <PageHero
         eyebrow="Events"
         title="Upcoming experiences"
