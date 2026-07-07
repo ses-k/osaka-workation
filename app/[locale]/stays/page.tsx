@@ -3,6 +3,7 @@ import { Star, Wifi, BedDouble } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { CTAStrip, SectionHeading } from "@/components/ui";
 import { StaysExplorer } from "@/components/stays-explorer";
+import { OsakaMap } from "@/components/osaka-map";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, defaultLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -47,7 +48,21 @@ export default function StaysPage({
         alt="Curated stays and accommodation in Osaka, Japan for digital nomads"
       />
 
+      {/* OSAKA MAP */}
       <section className="container-page py-16 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <span className="eyebrow">{t.mapEyebrow}</span>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
+              {t.mapTitle}
+            </h2>
+            <p className="mt-4 text-muted">{t.mapBody}</p>
+          </div>
+          <OsakaMap />
+        </div>
+      </section>
+
+      <section className="container-page pb-16 sm:pb-20">
         <div className="mb-8 max-w-2xl">
           <span className="eyebrow">{t.introEyebrow}</span>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-brand-ink sm:text-3xl">

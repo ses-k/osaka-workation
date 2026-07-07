@@ -63,7 +63,7 @@ export function SiteHeader() {
             <span className="text-[15px] font-extrabold tracking-[0.18em] text-brand-ink">
               OSAKA
             </span>
-            <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-brand-orange">
+            <span className="hidden text-[9px] font-semibold uppercase tracking-[0.22em] text-brand-orange xl:block">
               Digital Nomads Workation
             </span>
           </span>

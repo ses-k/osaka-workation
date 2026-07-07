@@ -421,6 +421,10 @@ export const PRICING = [
 export const PRICING_NOTE =
   "Accommodation from ¥4,500/night, booked separately. Full Program + stay + main add-ons ≈ ¥132,800 (~$880 USD). Prices subject to change.";
 
+// Set to false once final prices are confirmed. When true, prices show "Coming soon"
+// and every CTA points to the waitlist.
+export const PRICING_TBD = true;
+
 export const FOOD = [
   {
     image: "/img/food-ramen.jpg",
