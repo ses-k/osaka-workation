@@ -20,6 +20,45 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "digital-nomad-events-osaka",
+    title: "Digital Nomad Events & Meetups in Osaka (2026)",
+    excerpt:
+      "Where remote workers actually meet in Osaka — weekly meetups, coworking events, language exchanges, and the 14-day November Workation. Plus how to find events once you land.",
+    cover: "/blog/events-cover.jpg",
+    date: "2026-07-07",
+    dateLabel: "July 7, 2026",
+    readingTime: "6 min read",
+    tags: ["Osaka", "Events", "Community"],
+    body: [
+      { type: "p", text: "Osaka's remote-work scene is small enough to feel like a real community and big enough that something's always on. Whether you're here for a week or a season, showing up to a couple of events is the fastest way to turn a solo trip into a crew. Here's what the digital nomad event calendar in Osaka actually looks like — the recurring meetups, the coworking events, and the flagship Workation — plus how to find more once you arrive." },
+      { type: "callout", text: "New to the city? The easiest first step is our weekly Thursday coffee meetup — no sign-up, no pressure, and the first coffee's on us. Follow @osaka_workation or jump into the Discord for the week's plan." },
+      { type: "h2", text: "Weekly & monthly community events" },
+      { type: "p", text: "These are the regulars our community runs all year — free or low-cost, welcoming, and the backbone of the Osaka nomad scene:" },
+      { type: "cafe", n: 1, name: "Thursday Coffee Meetup", area: "Weekly · rotating cafes", text: "A relaxed morning meetup that rotates through Osaka's best cafes. Bring your laptop or just yourself. The easiest way to meet the crew." },
+      { type: "cafe", n: 2, name: "Japanese Cooking Class", area: "Bi-weekly · Tennoji", text: "Hands-on home cooking with a local chef — takoyaki, okonomiyaki, seasonal dishes — then everyone eats together." },
+      { type: "cafe", n: 3, name: "Osaka Photo Walk", area: "Monthly · Dotonbori", text: "A golden-hour walk through the neon canals and back alleys. All levels welcome, phone cameras totally fine." },
+      { type: "cafe", n: 4, name: "Nabe Nights", area: "Seasonal · izakaya", text: "Hot-pot dinners in the colder months — the warmest way to meet people and swap travel notes over shared food." },
+      { type: "img", src: "/blog/events-inline.jpg", alt: "A lively Osaka evening — digital nomad event and nightlife in Japan" },
+      { type: "h2", text: "The flagship: November Workation" },
+      { type: "p", text: "Once a year, everything comes together into a single 14-day event. The November Workation bundles stays, coworking, cultural experiences, and Kansai day trips for a crew of 50–100 remote workers — opening party, farewell dinner, and two weeks of built-in community. If you can time your Osaka trip to it, do." },
+      { type: "h2", text: "Beyond our community: the wider Osaka & Japan scene" },
+      { type: "list", items: [
+        "Coworking events — spaces like The DECK (Hommachi) run regular networking nights, workshops, and seminars.",
+        "Language exchanges — a staple in Osaka; great for meeting locals and other internationals in a low-key setting.",
+        "Startup & tech meetups — check the Osaka Innovation Hub (Grand Front, Umeda) for talks and community events.",
+        "Seasonal festivals (matsuri) — worth timing a trip around; Osaka's calendar is full of them year-round.",
+      ]},
+      { type: "h2", text: "How to find events once you land" },
+      { type: "list", items: [
+        "Follow @osaka_workation on Instagram and join our Discord for the weekly plan.",
+        "Meetup.com — search Osaka for international, language-exchange, and remote-work groups.",
+        "Peatix and Connpass — Japan's own event platforms (Connpass is great for tech).",
+        "Coworking space boards — most post their upcoming events in-house and on socials.",
+      ]},
+      { type: "callout", text: "Want a ready-made calendar instead of hunting for one? The November Workation is 14 days of events, coworking, and community in one ticket — no organizing required." },
+    ],
+  },
+  {
     slug: "esim-guide-japan-osaka",
     title: "The eSIM Guide for Working Remotely in Osaka",
     excerpt:
