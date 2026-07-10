@@ -66,4 +66,4 @@ These are stubbed and clearly marked in the code:
 - **Stays "View" buttons** — link to real listings when ready.
 - **Discord link** (`lib/site.ts` → `SITE.discord`) — replace with your real invite URL.
 
-Instagram (`@osaka_workation`) and email (`kokorolxy7@gmail.com`) are already wired in `lib/site.ts`, where all shared copy lives for easy editing.
+Instagram (`@osaka_workation`) and email (`osakaworkation@gmail.com`) are already wired in `lib/site.ts`, where all shared copy lives for easy editing.

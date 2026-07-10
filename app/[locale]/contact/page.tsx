@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Instagram, MessageCircle, Mail, ChevronDown, Link2 } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui";
-import { ContactForm } from "@/components/contact-form";
+import { TallyEmbed } from "@/components/tally-embed";
 import { JsonLd } from "@/components/json-ld";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
@@ -99,7 +99,7 @@ export default function ContactPage({
             </div>
           </div>
 
-          <ContactForm />
+          <TallyEmbed id={SITE.tallyContactId} title={t.reachTitle} />
         </div>
       </section>
 

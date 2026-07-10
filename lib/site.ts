@@ -6,10 +6,13 @@ export const SITE = {
   instagram: "https://www.instagram.com/osaka_workation",
   instagramHandle: "@osaka_workation",
   discord: "https://discord.gg",
-  email: "kokorolxy7@gmail.com",
+  email: "osakaworkation@gmail.com",
   linktree: "https://linktr.ee/osakaworkation",
   tallyId: "eqPAMQ",
   tallyUrl: "https://tally.so/r/eqPAMQ",
+  // Tally form embedded on the Contact page. Create a dedicated "Contact" form
+  // in Tally and paste its ID here (from tally.so/r/<ID>). Defaults to the waitlist form.
+  tallyContactId: "eqPAMQ",
 };
 
 export const NAV = [
