@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Star, Wifi, BedDouble } from "lucide-react";
+import Image from "next/image";
+import { Star, Wifi, BedDouble, Hotel, Users, Home, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { CTAStrip, SectionHeading } from "@/components/ui";
-import { StaysExplorer } from "@/components/stays-explorer";
-import { OsakaMap } from "@/components/osaka-map";
+import { L } from "@/components/locale-link";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, defaultLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -23,6 +23,21 @@ export function generateMetadata({
     og: "stays",
   });
 }
+
+const TYPE_IMAGES = [
+  "/stays/accom-hotel.jpg",
+  "/stays/accom-coliving.jpg",
+  "/stays/accom-guesthouse.jpg",
+];
+const TYPE_ICONS = [Hotel, Users, Home];
+const GALLERY = [
+  "/stays/gallery-1.jpg",
+  "/stays/gallery-2.jpg",
+  "/stays/gallery-3.jpg",
+  "/stays/gallery-4.jpg",
+  "/stays/gallery-5.jpg",
+  "/stays/gallery-6.jpg",
+];
 
 export default function StaysPage({
   params,
@@ -45,43 +60,107 @@ export default function StaysPage({
         title={t.heroTitle}
         body={t.heroBody}
         image="/stays/stay-hero.jpg"
-        alt="Curated stays and accommodation in Osaka, Japan for digital nomads"
+        alt="A comfortable, work-ready stay in Osaka, Japan"
       />
 
-      {/* OSAKA MAP */}
+      {/* HOW IT WORKS */}
       <section className="container-page py-16 sm:py-20">
-        <div className="mb-8 max-w-2xl">
-          <span className="eyebrow">{t.mapEyebrow}</span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
-            {t.mapTitle}
-          </h2>
-          <p className="mt-4 text-muted">{t.mapBody}</p>
-        </div>
-        <OsakaMap />
-        <div className="mt-5 flex flex-wrap items-center gap-6 text-sm text-muted">
-          <span className="inline-flex items-center gap-2">
-            <span className="h-3 w-3 rounded-full border-2 border-white bg-brand-orange shadow" />
-            {t.mapLegendStays}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <span className="h-3 w-3 rounded-full border-2 border-white bg-brand-ink shadow" />
-            {t.mapLegendSpots}
-          </span>
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <span className="eyebrow">{t.howEyebrow}</span>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-4xl">
+              {t.howTitle}
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted">{t.howBody}</p>
+            <L href="/contact" className="btn-primary mt-7">
+              {t.howCta} <ArrowRight className="h-4 w-4" />
+            </L>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-paper-line">
+            <Image
+              src="/stays/gallery-2.jpg"
+              alt="Bright, work-ready room in an Osaka stay"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="container-page pb-16 sm:pb-20">
-        <div className="mb-8 max-w-2xl">
-          <span className="eyebrow">{t.introEyebrow}</span>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-brand-ink sm:text-3xl">
-            {t.introTitle}
-          </h2>
-          <p className="mt-3 text-muted">{t.introBody}</p>
+      {/* THREE TYPES */}
+      <section className="border-y border-paper-line bg-white">
+        <div className="container-page py-16 sm:py-20">
+          <SectionHeading
+            align="center"
+            eyebrow={t.typesEyebrow}
+            title={t.typesTitle}
+            body={t.typesBody}
+          />
+          <div className="mx-auto mt-12 grid gap-6 md:grid-cols-3">
+            {t.typeItems.map((item, i) => {
+              const Icon = TYPE_ICONS[i];
+              return (
+                <article
+                  key={item.name}
+                  className="group overflow-hidden rounded-3xl border border-paper-line bg-white transition-all hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-[0_18px_40px_-24px_rgba(15,15,15,0.35)]"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={TYPE_IMAGES[i]}
+                      alt={item.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute left-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/90 text-brand-orange backdrop-blur">
+                      <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-brand-ink">
+                      {item.name}
+                    </h3>
+                    <p className="mt-1 text-sm font-medium text-brand-orange">
+                      {item.tagline}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">
+                      {item.body}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
-
-        <StaysExplorer />
       </section>
 
+      {/* COMFORT GALLERY */}
+      <section className="container-page py-16 sm:py-20">
+        <SectionHeading
+          eyebrow={t.galleryEyebrow}
+          title={t.galleryTitle}
+          body={t.galleryBody}
+        />
+        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
+          {GALLERY.map((img) => (
+            <div
+              key={img}
+              className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-paper-line"
+            >
+              <Image
+                src={img}
+                alt="A comfortable guesthouse space in Osaka"
+                fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WHAT'S INCLUDED */}
       <section className="border-y border-paper-line bg-white">
         <div className="container-page py-16 sm:py-20">
           <SectionHeading
