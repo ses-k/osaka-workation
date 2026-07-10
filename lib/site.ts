@@ -12,7 +12,7 @@ export const SITE = {
   tallyUrl: "https://tally.so/r/eqPAMQ",
   // Tally form embedded on the Contact page. Create a dedicated "Contact" form
   // in Tally and paste its ID here (from tally.so/r/<ID>). Defaults to the waitlist form.
-  tallyContactId: "eqPAMQ",
+  tallyContactId: "81GeNx",
 };
 
 export const NAV = [
