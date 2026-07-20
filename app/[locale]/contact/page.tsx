@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Instagram, MessageCircle, Mail, ChevronDown, Link2 } from "lucide-react";
+import { Instagram, MessageCircle, Mail, Link2 } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui";
 import { TallyEmbed } from "@/components/tally-embed";
-import { JsonLd } from "@/components/json-ld";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import { isLocale, defaultLocale } from "@/lib/i18n/config";
@@ -36,17 +35,6 @@ export default function ContactPage({
 
   return (
     <>
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: dict.data.faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }}
-      />
       <PageHero
         eyebrow={t.heroEyebrow}
         title={t.heroTitle}
@@ -56,10 +44,10 @@ export default function ContactPage({
       />
 
       <section className="container-page py-16 sm:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+        <div className="mx-auto max-w-5xl space-y-8">
           <div>
             <SectionHeading eyebrow={t.reachEyebrow} title={t.reachTitle} />
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
               <ContactRow
                 icon={<MessageCircle className="h-5 w-5 text-brand-orange" />}
                 title="Discord"
@@ -99,30 +87,32 @@ export default function ContactPage({
             </div>
           </div>
 
-          <TallyEmbed id={SITE.tallyContactId} title={t.reachTitle} />
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section
-        id="faq"
-        className="scroll-mt-24 border-t border-paper-line bg-white"
-      >
-        <div className="container-page py-16 sm:py-20">
-          <SectionHeading align="center" eyebrow={t.faqEyebrow} title={t.faqTitle} />
-          <div className="mx-auto mt-12 max-w-3xl space-y-3">
-            {dict.data.faqs.map((f) => (
-              <details
-                key={f.q}
-                className="group rounded-2xl border border-paper-line bg-paper-cream p-5"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-brand-ink">
-                  {f.q}
-                  <ChevronDown className="h-5 w-5 shrink-0 text-brand-orange transition-transform group-open:rotate-180" />
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{f.a}</p>
-              </details>
-            ))}
+          <div className="rounded-[2rem] border border-brand-orange/20 bg-gradient-to-b from-brand-orange/10 via-white to-white p-4 shadow-[0_28px_80px_-48px_rgba(15,15,15,0.45)] sm:p-5">
+            <div className="mb-4 rounded-[1.5rem] border border-white/70 bg-white/90 px-5 py-5 backdrop-blur">
+              <span className="eyebrow">{t.reachEyebrow}</span>
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-brand-ink sm:text-3xl">
+                {t.formCardTitle}
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+                {t.formCardBody}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {t.formCardMeta.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-brand-orange/15 bg-brand-orange/8 px-3 py-1.5 text-xs font-semibold text-brand-ink"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <TallyEmbed
+              id={SITE.tallyId}
+              title={dict.actions.joinWaitlist}
+              minHeight={1180}
+              cropTop={320}
+            />
           </div>
         </div>
       </section>

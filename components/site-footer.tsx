@@ -32,7 +32,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
       links: [
         { label: f.about, href: "/about" },
         { label: f.contact, href: "/contact" },
-        { label: f.faq, href: "/contact#faq" },
+        { label: f.faq, href: "/faq" },
         { label: f.partner, href: "/contact#partner" },
       ],
     },

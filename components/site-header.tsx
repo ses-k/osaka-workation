@@ -34,11 +34,13 @@ export function SiteHeader() {
     { href: "/blog", label: dict.nav.blog },
     { href: "/about", label: dict.nav.about },
     { href: "/contact", label: dict.nav.contact },
+    { href: "/faq", label: dict.nav.faq },
   ];
 
   const isActive = (href: string) => {
-    const full = `/${locale}${href === "/" ? "" : href}`;
-    return href === "/" ? pathname === full : pathname.startsWith(full);
+    const baseHref = href.split("#")[0];
+    const full = `/${locale}${baseHref === "/" ? "" : baseHref}`;
+    return baseHref === "/" ? pathname === full : pathname.startsWith(full);
   };
 
   return (
